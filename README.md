@@ -16,5 +16,5 @@
 - валидация полей 
 
 Cтруктура: 
-fileModifier - главное окно 
-fileProcessor - обработчик
+- fileModifier - главное окно 
+- fileProcessor - обработчик
