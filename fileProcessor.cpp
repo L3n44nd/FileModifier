@@ -2,7 +2,10 @@
 #include <QApplication>
 
 fileProcessor::fileProcessor(QObject *parent)
-    : QObject(parent){}
+    : QObject(parent){
+    buffer.resize(buffSize);
+    buffPtr = buffer.data();
+}
 
 QString fileProcessor::generatePath(const QString& fileName) const {
     QFileInfo fileInfo(fileName);
@@ -88,11 +91,7 @@ bool fileProcessor::processOneFile(const QString& filePath){
         return false;
     }
 
-    const int buffSize = 10 * 1024 * 1024;
-    QByteArray buffer(buffSize, Qt::Uninitialized);
     int bytesRead;
-    char* buffPtr = buffer.data();
-
     while ((bytesRead = fileFrom.read(buffPtr, buffSize)) > 0) {
         if (stopReq.load()) {
             tmpFile.remove();
