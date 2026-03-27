@@ -20,4 +20,4 @@ Cтруктура:
 - fileProcessor - обработчик
 
 На основе этой версии реализована версия с пулом потоков:
-https://github.com/L3n44nd/fileModifier2.0
+https://github.com/L3n44nd/FileModifier2.0
